@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/nenncy/adminside/static/css/main.0b15fe3b.chunk.css",
+    "main.js": "/nenncy/adminside/static/js/main.6730b3db.chunk.js",
+    "main.js.map": "/nenncy/adminside/static/js/main.6730b3db.chunk.js.map",
+    "runtime-main.js": "/nenncy/adminside/static/js/runtime-main.996be73d.js",
+    "runtime-main.js.map": "/nenncy/adminside/static/js/runtime-main.996be73d.js.map",
+    "static/css/2.01ca705e.chunk.css": "/nenncy/adminside/static/css/2.01ca705e.chunk.css",
+    "static/js/2.0fdc0190.chunk.js": "/nenncy/adminside/static/js/2.0fdc0190.chunk.js",
+    "static/js/2.0fdc0190.chunk.js.map": "/nenncy/adminside/static/js/2.0fdc0190.chunk.js.map",
+    "static/js/3.d4e2ffc0.chunk.js": "/nenncy/adminside/static/js/3.d4e2ffc0.chunk.js",
+    "static/js/3.d4e2ffc0.chunk.js.map": "/nenncy/adminside/static/js/3.d4e2ffc0.chunk.js.map",
+    "index.html": "/nenncy/adminside/index.html",
+    "static/css/2.01ca705e.chunk.css.map": "/nenncy/adminside/static/css/2.01ca705e.chunk.css.map",
+    "static/css/main.0b15fe3b.chunk.css.map": "/nenncy/adminside/static/css/main.0b15fe3b.chunk.css.map",
+    "static/js/2.0fdc0190.chunk.js.LICENSE.txt": "/nenncy/adminside/static/js/2.0fdc0190.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/nenncy/adminside/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.996be73d.js",
+    "static/css/2.01ca705e.chunk.css",
+    "static/js/2.0fdc0190.chunk.js",
+    "static/css/main.0b15fe3b.chunk.css",
+    "static/js/main.6730b3db.chunk.js"
+  ]
+}
