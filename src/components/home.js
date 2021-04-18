@@ -47,10 +47,11 @@ const Home = () => {
          user.map((CurElem) => {
            return(
              <div>
+               
               <div className="col-10 col-md-4 mt-5" key={CurElem._id}>
              <Card style={{ width: '18rem', backgroundColor:"white"}} className="d-flex align-items-center">
              <Card.Body>
-             <img src="http://localhost:5000/public/uploads/images/{CurElem.photo}"/>
+             <img src={CurElem.photo}/>
              <Card.Text style={{textAlign:"center",fontFamily:"sans-serif"}}> {CurElem.username}</Card.Text>
              
            <Card.Title>{CurElem.age}</Card.Title>

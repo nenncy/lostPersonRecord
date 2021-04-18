@@ -47,7 +47,18 @@ router.route('/').get((req, res) => {
   })
 });
 
-
+router.post("/upload",upload.single('photo'),(req,res)=>{
+    const photo=req.file.filename;
+   upload(req,res,(err)=>{
+     if(err){
+       console.log("error")
+      }
+      else{
+        console.log(req,file);
+        res.send('test');
+      }
+   })
+})
 
 
 router.post("/add",upload.single('photo'),(req, res ) => {
