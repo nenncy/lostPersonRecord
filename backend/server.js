@@ -4,12 +4,31 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const multer = require('multer');
 
-
 require('dotenv').config();
 const app=express();
 const port=process.env.PORT || 5000;
 
+let allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  // intercept OPTIONS method
+  if ('OPTIONS' == req.method) {
+    res.send(200);
+  }
+  else {
+    next();
+  }
+};
+
+app.use(allowCrossDomain);
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 app.use(cors());
+
+
+
+
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;

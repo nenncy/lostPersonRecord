@@ -38,12 +38,12 @@ const  onChangePhoto=(e)=>{
     formData.append('location',newUser.location);
     formData.append('date',newUser.date);
 
-    console.log(formData);
+    console.log(JSON.stringify(formData));
 
     axios.post('http://localhost:5000/data/add', formData)
       .then(res => console.log(res));
 
-    window.location = '/';
+    //window.location = '/';
   }
 
   

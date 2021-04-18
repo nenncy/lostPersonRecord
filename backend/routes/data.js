@@ -62,12 +62,13 @@ router.post("/upload",upload.single('photo'),(req,res)=>{
 
 
 router.post("/add",upload.single('photo'),(req, res ) => {
-  console.log(req);
+  console.log(JSON.stringify(req.body));
+  console.log(JSON.stringify(req.body));
   const username = req.body.username;
   const age= Number(req.body.age);
   const location = req.body.location;
   const date = Date.parse(req.body.date);
-  const photo=req.file.path;
+  const photo=req.file.path.replace("..\\public", "").replace("../public", "").replace("..\public", "");
   
  
 
@@ -82,9 +83,7 @@ router.post("/add",upload.single('photo'),(req, res ) => {
   });
 
   newData.save()
-  .then(() => res.json('Data added!'))
-    console.log("record added")
-  .catch(err => res.status(400).json('Error: ' + err));
+  .then(() => res.json('Data added!')).catch(err => res.status(400).json('Error: ' + err));
 });
 
 

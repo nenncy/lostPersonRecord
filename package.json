@@ -1,5 +1,4 @@
 {
-  "homepage": "http://github.io/nenncy/adminside",
   "name": "adminpanel",
   "version": "0.1.0",
   "private": true,
@@ -21,7 +20,7 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "react-scripts start",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
