@@ -12,21 +12,21 @@ import { NavLink } from 'react-router-dom';
            </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ml-auto " style={{marginRight:"10%"}}>
-            <li className="nav-item active" style={{marginRight:"10%"}}>
-                <NavLink className="nav-link" to="/">Home <span className="sr-only">(current)</span></NavLink>
+            <ul className="navbar-nav ml-auto " >
+            <li className="nav-item active" >
+                <NavLink className="nav-link" exact to="/">Home <span className="sr-only">(current)</span></NavLink>
             </li>
-            <li className="nav-item" style={{marginRight:"10%"}}>
+            <li className="nav-item">
                 <NavLink className="nav-link" to="/adddata">Adddata</NavLink>
             </li>
-            <li class="nav-item" style={{marginRight:"10%"}}>
+            <li class="nav-item" >
                 <NavLink className="nav-link" to="/viewcomplaints">View Complaints</NavLink>
             </li>
-            <li class="nav-item" style={{marginRight:"10%"}}>
+            <li class="nav-item" >
                 <NavLink className="nav-link" to="/complaints">Complaints</NavLink>
             </li>
-            <li class="nav-item" style={{marginRight:"10%"}}>
-                <NavLink className="nav-link" to="/users">ViewUser</NavLink>
+            <li class="nav-item">
+                <NavLink className="nav-link" to="/records">Records</NavLink>
             </li>
             
             

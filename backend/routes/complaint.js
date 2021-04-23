@@ -12,7 +12,7 @@ let path = require('path');
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-      cb(null, './complaintimages');
+      cb(null, '../public/uploads/complaintimage');
   },
   filename: function(req, file, cb) {   
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
@@ -56,7 +56,7 @@ router.post("/addcomplaint",upload.single('photo'),(req, res ) => {
   const age= Number(req.body.age);
   const location = req.body.location;
   const date = Date.parse(req.body.date);
-  const photo=req.file.filename;
+  const photo=req.file.path.replace("..\\public", "").replace("../public", "").replace("..\public", "");
   const complainttype=req.body.complainttype;
   
  
@@ -73,9 +73,7 @@ router.post("/addcomplaint",upload.single('photo'),(req, res ) => {
   });
 
   newComplaint.save()
-  .then(() => res.json('Complaint added!'))
-    console.log("record added")
-  .catch(err => res.status(400).json('Error: ' + err));
+  .then(() => res.json('Complaint added!')).catch(err => res.status(400).json('Error: ' + err));
 });
 
 

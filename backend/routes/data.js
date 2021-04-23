@@ -63,11 +63,12 @@ router.post("/upload",upload.single('photo'),(req,res)=>{
 
 router.post("/add",upload.single('photo'),(req, res ) => {
   console.log(JSON.stringify(req.body));
-  console.log(JSON.stringify(req.body));
+  
   const username = req.body.username;
   const age= Number(req.body.age);
   const location = req.body.location;
   const date = Date.parse(req.body.date);
+  const msg=req.body.msg;
   const photo=req.file.path.replace("..\\public", "").replace("../public", "").replace("..\public", "");
   
  
@@ -77,7 +78,8 @@ router.post("/add",upload.single('photo'),(req, res ) => {
     age,
     location,
     date,
-    photo
+    photo,
+    msg
   
     
   });
@@ -107,7 +109,7 @@ router.route('/update/:id').post( (req, res) => {
           data.age= Number(req.body.age);
           data.location = req.body.location;
           data.date = Date.parse(req.body.date);
-          data.photo=req.file.filename;
+          data.photo=req.file.path.replace("..\\public", "").replace("../public", "").replace("..\public", "");
          
 
       data.save()

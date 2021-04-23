@@ -9,7 +9,8 @@ const dataSchema = new Schema({
    date: { type: Date, required: true },
    photo: {
     type: String
-            }
+            },
+    msg:{type:String }            
   
 }, {
   timestamps: true,

@@ -5,7 +5,7 @@ import {Card, Container ,Row,Col} from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { getSuggestedQuery } from '@testing-library/dom';
 import Moment from 'react-moment';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'moment-timezone';
 
 import axios from 'axios';
@@ -19,16 +19,13 @@ const mystyle = {
 };
 
 
-const Home = () => {
+const ViewComplaint = () => {
+
   
-
-
- 
-
   const [user, setUsers] = useState([])
 
    const getUser = async ()=>{
-       const response= await fetch('http://localhost:5000/data');
+       const response= await fetch('http://localhost:5000/complaint');
       
       setUsers( await response.json());
       
@@ -42,7 +39,7 @@ const Home = () => {
    
    return (
       <>
-   <h1 style={mystyle}>List of Missing People</h1>
+   <h1 style={mystyle}>List of Complaints</h1>
    <div className="container-fluid " >
   <div className="row text-center">
    <div className="cards-container">
@@ -56,7 +53,7 @@ const Home = () => {
              <Card.Img variant="top" src={CurElem.photo} />
              <Card.Body>
              
-             <Card.Text style={{textAlign:"center",fontFamily:"sans-serif"}}> {CurElem.username}</Card.Text>
+             <Card.Text style={{textAlign:"center",fontFamily:"sans-serif"}}> {CurElem.name}</Card.Text>
              
            <Card.Title>{CurElem.age}</Card.Title>
            <Card.Text>
@@ -72,7 +69,7 @@ const Home = () => {
           
            </Card.Body>
            <Card.Text>
-           <Link to={"/edit/"+CurElem._id}>edit</Link> | 
+           <Link to={"/edit/"+CurElem._id}>edit</Link> | <a href="#" onClick={() => { CurElem.deleteData(CurElem._id) }}>delete</a>
            </Card.Text>
           </Card>
            </div>
@@ -90,4 +87,4 @@ const Home = () => {
       </>
    )
 }
- export default Home;
+ export default ViewComplaint;

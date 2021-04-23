@@ -4,7 +4,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { Container } from 'react-bootstrap';
 
-const CreateData =()=> {
+const EditData =()=> {
   const [newUser, setNewUser] = useState(
     {
         username: '',
@@ -40,7 +40,7 @@ const  onChangePhoto=(e)=>{
 
     console.log(JSON.stringify(formData));
 
-    axios.post('http://localhost:5000/data/add', formData)
+    axios.get('http://localhost:5000/data/edit'+ newUser.id, formData)
       .then(res => console.log(res));
 
       window.location = '/';
@@ -108,7 +108,7 @@ const  onChangePhoto=(e)=>{
         </div>
 
         <div className="form-group">
-          <input type="submit" value="Create List" className="btn btn-primary"  />
+          <input type="submit" value="Edit List" className="btn btn-primary"  />
         </div>
       </form>
     </Container>
@@ -119,4 +119,4 @@ const  onChangePhoto=(e)=>{
 
 
 
-export default CreateData;
+export default EditData;
